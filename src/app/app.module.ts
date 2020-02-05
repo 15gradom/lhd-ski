@@ -5,15 +5,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnowReportService } from 'src/services/snow-report.service';
 import { HttpClientModule } from '@angular/common/http';
+import { StationListComponent } from './station-list/station-list.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StationListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [SnowReportService],
   bootstrap: [AppComponent]
