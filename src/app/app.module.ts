@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { StationListComponent } from './station-list/station-list.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MapComponent } from './map/map.component';
+import { StationDetailComponent } from './station-detail/station-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StationListComponent,
-    MapComponent
+    MapComponent,
+    StationDetailComponent
   ],
   imports: [
     BrowserModule,
