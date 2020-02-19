@@ -7,11 +7,13 @@ import { SnowReportService } from 'src/services/snow-report.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StationListComponent } from './station-list/station-list.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StationListComponent
+    StationListComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
