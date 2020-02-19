@@ -1,6 +1,28 @@
-import { Measuringpoint } from "./measuringpoint";
+export interface WeatherStatus {
+    additionalProp1: string;
+    additionalProp2: string;
+    additionalProp3: string;
+}
 
-export class SnowReportBaseData {
+export interface WeatherObservation {
+    Id: string;
+    Level: string;
+    LevelId: string;
+    WeatherStatus: WeatherStatus;
+}
+
+export interface Measuringpoint {
+    Id: string;
+    LastUpdate: Date;
+    Shortname: string;
+    SnowHeight: string;
+    newSnowHeight: string;
+    Temperature: string;
+    LastSnowDate: Date;
+    WeatherObservation: WeatherObservation[];
+}
+
+export interface SnowReportBase {
     Id: number;
     RID: string;
     Skiregion: string;
