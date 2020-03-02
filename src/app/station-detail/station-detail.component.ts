@@ -20,9 +20,9 @@ export class StationDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sr.getSnowReports().subscribe( snowreport => {
-      this.snowreport = snowreport.find( x => this.route.snapshot.params["id"] == x.RID);
-      this.sr.getSkiArea(this.snowreport.RID).subscribe( snowreportdetails => {
+    this.sr.getSnowReports().subscribe(snowreport => {
+      this.snowreport = snowreport.find(x => this.route.snapshot.params["id"] == x.RID);
+      this.sr.getSkiArea(this.snowreport.RID).subscribe(snowreportdetails => {
         this.snowreportdetails = snowreportdetails;
       });
     });
