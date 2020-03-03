@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SnowReportBaseData } from 'src/shared/snow-report-base-data';
+import { SnowReportBase } from 'src/shared/snow-report-base';
 
 @Component({
   selector: 'app-station-list',
@@ -7,7 +7,7 @@ import { SnowReportBaseData } from 'src/shared/snow-report-base-data';
   styleUrls: ['./station-list.component.scss']
 })
 export class StationListComponent implements OnInit {
-  @Input() snowreports: Array<SnowReportBaseData>;
+  @Input() snowreports: Array<SnowReportBase>;
   breakpoint: number;
 
   constructor() { }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SnowReportService } from 'src/services/snow-report.service';
-import { SnowReportBaseData } from 'src/shared/snow-report-base-data';
-import { SkiArea } from './ski-areas-classes';
-import { Measuringpoint } from 'src/shared/measuringpoint';
+import { SkiArea } from 'src/shared/ski-areas-classes';
+import { SnowReportBase, Measuringpoint } from 'src/shared/snow-report-base';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import { Measuringpoint } from 'src/shared/measuringpoint';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  snowreports: SnowReportBaseData[];
+  snowreports: SnowReportBase[];
   skiarea: SkiArea;
   measuringpoint: Measuringpoint;
 

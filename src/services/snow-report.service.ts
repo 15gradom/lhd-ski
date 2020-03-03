@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SnowReportBaseData } from 'src/shared/snow-report-base-data';
-import { SkiArea } from 'src/app/ski-areas-classes';
-import { Measuringpoint } from 'src/shared/measuringpoint';
+import { SkiArea } from 'src/shared/ski-areas-classes';
+import { SnowReportBase, Measuringpoint } from 'src/shared/snow-report-base';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +15,8 @@ export class SnowReportService {
     private http: HttpClient
   ) { }
 
-  getSnowReports(): Observable<SnowReportBaseData[]>{
-    return this.http.get<SnowReportBaseData[]>(this.SNOWREPORT);
+  getSnowReports(): Observable<SnowReportBase[]>{
+    return this.http.get<SnowReportBase[]>(this.SNOWREPORT);
   }
 
   getMeasuringpoint(ID: string): Observable<Measuringpoint>{
