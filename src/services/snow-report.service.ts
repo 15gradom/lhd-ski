@@ -8,9 +8,9 @@ import { SnowReportBase, Measuringpoint } from 'src/shared/snow-report-base';
 })
 export class SnowReportService {
 
-  MEASURINGPOINT = "http://tourism.opendatahub.bz.it/api/Weather/Measuringpoint/";
-  SNOWREPORT = "http://tourism.opendatahub.bz.it/api/Weather/SnowReport?lang=de";
-  SKIAREA = "http://tourism.opendatahub.bz.it/api/SkiArea/";
+  private MEASURINGPOINT = "http://tourism.opendatahub.bz.it/api/Weather/Measuringpoint/";
+  private SNOWREPORT = "http://tourism.opendatahub.bz.it/api/Weather/SnowReport?lang=de";
+  private SKIAREA = "http://tourism.opendatahub.bz.it/api/SkiArea/";
   constructor(
     private http: HttpClient
   ) { }
