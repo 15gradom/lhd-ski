@@ -1,5 +1,6 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Input} from '@angular/core';
 import * as L from 'leaflet';
+import { Measuringpoint } from 'src/shared/measuringpoint';
 
 @Component({
   selector: 'app-map',
@@ -9,15 +10,22 @@ import * as L from 'leaflet';
 export class MapComponent implements AfterViewInit {
 
   private map;
+  greenIcon = null;
+  @Input() measuringpoints: Measuringpoint[];
 
-  constructor() { 
+  constructor() {
+    
   }
 
   private initMap(): void {
     this.map = L.map('map', {
       center: [ 39.8282, -98.5795 ],
       zoom: 3
+    }).setView([46.49638, 11.35862], 11);
+    this.measuringpoints.forEach(element => {
+      L.marker([element.Latitude, element.Altitude]).addTo(this.map);
     });
+    
   }
 
   ngAfterViewInit(): void {
