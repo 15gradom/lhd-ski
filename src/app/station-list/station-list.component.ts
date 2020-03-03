@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SnowReportBase } from 'src/shared/snow-report-base';
+import { SnowReportService } from 'src/services/snow-report.service';
 
 @Component({
   selector: 'app-station-list',
@@ -7,16 +8,25 @@ import { SnowReportBase } from 'src/shared/snow-report-base';
   styleUrls: ['./station-list.component.scss']
 })
 export class StationListComponent implements OnInit {
-  @Input() snowreports: Array<SnowReportBase>;
+  snowreports: Array<SnowReportBase>;
   breakpoint: number;
 
-  constructor() { }
+  constructor(
+    private sr: SnowReportService
+  ) { }
 
   ngOnInit() {
-    this.breakpoint = (window.innerWidth <= 600) ? 1 : 6;
-}
+    this.sr.getSnowReports().subscribe(snowreports =>
+      this.snowreports = snowreports
+    );
+    this.breakpoint = window.innerWidth / 400;
+    if (this.breakpoint > 4)
+      this.breakpoint = 4;
+  }
 
-onResize(event) {
-  this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 6;
-}
+  onResize(event) {
+    this.breakpoint = event.target.innerWidth / 400;
+    if (this.breakpoint > 4)
+      this.breakpoint = 4;
+  }
 }

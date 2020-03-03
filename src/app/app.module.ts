@@ -10,6 +10,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MapComponent } from './map/map.component';
 import { StationDetailComponent } from './station-detail/station-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     HttpClientModule,
     MatGridListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule
   ],
   providers: [SnowReportService],
   bootstrap: [AppComponent]

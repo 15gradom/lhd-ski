@@ -1,4 +1,23 @@
-<mat-grid-list [cols]="breakpoint" rowHeight="2:0.5" (window:resize)="onResize($event)">
-  <!--  <mat-grid-tile *ngFor="let snowreport of snowreports">{{snowreport | json}}</mat-grid-tile>
- --><pre>{{snowreports | json}}</pre>
+<mat-grid-list [cols]="breakpoint" rowHeight="2:1" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let snowreport of snowreports">
+        <a routerLink="../detail/{{snowreport.RID}}">
+            <mat-card class="example-card" style="margin: 10px">
+                <mat-card-header>
+                    <mat-card-title>{{snowreport.Skiregion}}</mat-card-title>
+                    <mat-card-subtitle>{{snowreport.Areaname}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content fxLayout.gt-xs="row">
+                    <div style="max-width: 50%; margin: 10px">
+                        <img mat-card-image src="{{snowreport.contactlogo}}">
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button><a href="{{snowreport.contactweburl}}" target="_blank">Hompage</a></button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </a>
+    </mat-grid-tile>
 </mat-grid-list>
+
+<pre>{{snowreports | json}}</pre>
