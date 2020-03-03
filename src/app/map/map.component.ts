@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, Input} from '@angular/core';
 import * as L from 'leaflet';
-import { Measuringpoint } from 'src/shared/measuringpoint';
+import { Measuringpoint } from 'src/shared/snow-report-base';
 
 @Component({
   selector: 'app-map',
